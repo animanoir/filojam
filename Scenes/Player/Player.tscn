@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 23.25, 34.75 )
+extents = Vector2( 18.5, 33.5 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
@@ -74,13 +74,13 @@ script = ExtResource( 2 )
 speed = 150
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 25.75, 33.25 )
+position = Vector2( -1, 5 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 22.1189, 24.2324 )
+position = Vector2( 1.90735e-06, -0.999998 )
 scale = Vector2( 1.7761, 2.18001 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true

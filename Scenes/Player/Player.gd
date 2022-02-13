@@ -9,7 +9,6 @@ func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
-		print("se movió para la derecha")
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_down"):
@@ -18,7 +17,6 @@ func get_input():
 		velocity.y -= 1
 	if velocity.x != 0 or velocity.y != 0 :
 		$AnimatedSprite.animation = "run"
-	# See the note below about boolean assignment.
 		$AnimatedSprite.flip_h = velocity.x < 0
 	elif velocity.x == 0 or velocity.y == 0:
 		$AnimatedSprite.animation = "idle"
