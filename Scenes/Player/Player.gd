@@ -15,6 +15,14 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
+	if velocity.x != 0:
+		$AnimatedSprite.animation = "walk"
+		$AnimatedSprite.flip_v = false
+	# See the note below about boolean assignment.
+		$AnimatedSprite.flip_h = velocity.x < 0
+	elif velocity.y != 0:
+		$AnimatedSprite.animation = "up"
+		$AnimatedSprite.flip_v = velocity.y > 0
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):

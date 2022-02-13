@@ -3,7 +3,7 @@
 [ext_resource path="res://Textures/Player/adventurer-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.25, 34.75 )
 
 [sub_resource type="AtlasTexture" id=2]
@@ -36,7 +36,7 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 300, 37, 50, 37 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
@@ -49,11 +49,11 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 25.75, 33.25 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 20, 29 )
-scale = Vector2( 1.69134, 1.9223 )
-frames = SubResource( 1 )
+position = Vector2( 22.1189, 24.2324 )
+scale = Vector2( 1.7761, 2.18001 )
+frames = SubResource( 8 )
 frame = 5
 playing = true
