@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/texttest.jpg-a3d6ed618c1b4b36274f5298603f4427.stex"
+path="res://.import/craneo.png-a295c05909104fb542a37ea893222983.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Scene1/texttest.jpg"
-dest_files=[ "res://.import/texttest.jpg-a3d6ed618c1b4b36274f5298603f4427.stex" ]
+source_file="res://Assets/Textures/Emojis/craneo.png"
+dest_files=[ "res://.import/craneo.png-a295c05909104fb542a37ea893222983.stex" ]
 
 [params]
 

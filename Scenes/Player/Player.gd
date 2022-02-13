@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 
 var velocity = Vector2()
+onready var AnimatedSpriteNode = get_node("AnimatedSprite")
 
 func get_input():
 	velocity = Vector2()
@@ -15,14 +16,13 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
-	if velocity.x != 0:
-		$AnimatedSprite.animation = "walk"
-		$AnimatedSprite.flip_v = false
+	if velocity.x != 0 or velocity.y != 0 :
+		$AnimatedSprite.animation = "run"
 	# See the note below about boolean assignment.
 		$AnimatedSprite.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite.animation = "up"
-		$AnimatedSprite.flip_v = velocity.y > 0
+	elif velocity.x == 0 or velocity.y == 0:
+		$AnimatedSprite.animation = "idle"
+	
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):

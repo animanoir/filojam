@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Textures/Scene1/texttest.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Scenary/bgTest.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Emojis/EmojiAlien.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Emojis/EmojiDeath.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Emojis/EmojiBolac.tscn" type="PackedScene" id=5]
 
 [node name="Escenario1" type="Node2D"]
 
@@ -16,4 +19,16 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 246, 378 )
+position = Vector2( 222, 406 )
+
+[node name="EmojiAlien" parent="." instance=ExtResource( 3 )]
+position = Vector2( 54, 269 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="EmojiDeath" parent="." instance=ExtResource( 4 )]
+position = Vector2( 541, 280 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="EmojiBolac" parent="." instance=ExtResource( 5 )]
+position = Vector2( 322, 39 )
+scale = Vector2( 0.3, 0.3 )
