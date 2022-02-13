@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/OverlayIn.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/LabelRandText.gd" type="Script" id=2]
@@ -6,7 +6,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
-length = 5.0
+length = 7.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -14,7 +14,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3, 5 ),
+"times": PoolRealArray( 0, 6, 7.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
@@ -37,7 +37,75 @@ tracks/0/keys = {
 
 [sub_resource type="DynamicFont" id=3]
 size = 87
+use_filter = true
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_fonts/font:extra_spacing_char")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_fonts/font:outline_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:custom_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "dissappear"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_fonts/font:extra_spacing_char")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 5, 6.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 0, -60 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="OverlayIn" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -47,7 +115,6 @@ margin_right = 600.0
 margin_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -64,6 +131,7 @@ margin_left = -214.0
 margin_top = -52.5
 margin_right = 214.0
 margin_bottom = 52.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "desvanece"
 align = 1
@@ -72,5 +140,9 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LabelRandText"]
+anims/RESET = SubResource( 4 )
+anims/dissappear = SubResource( 5 )
 
 [connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
