@@ -420,7 +420,7 @@ font_data = ExtResource( 2 )
 position = Vector2( 300, 300 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 81 )
-frame = 27
+frame = 22
 playing = true
 
 [node name="Text" type="Label" parent="."]
@@ -434,7 +434,8 @@ margin_right = -96.5
 margin_bottom = -91.5
 custom_fonts/font = SubResource( 82 )
 text = "Hazme caso.
-Sin ti no existo."
+Sin ti
+ no Soy."
 align = 1
 autowrap = true
 __meta__ = {
