@@ -1,6 +1,6 @@
 extends Label
 
-var randomTexts = ["Todo", "Irreal", "Desvanece", "Tiempo"]
+var randomTexts = ["Todo", "Irreal", "Desvanece", "Tiempo","Permanece", "Memoria", "Cuerpo"]
 var rng = RandomNumberGenerator.new()
 var secsTimeFromStart
 onready var AnimationPlayerNode = get_node("AnimationPlayer")
@@ -16,4 +16,4 @@ func _ready():
 func _process(delta):
 	secsTimeFromStart = OS.get_ticks_msec() / 1000
 	if(secsTimeFromStart % 2 == 0):
-		set_text(randomTexts[rng.randi_range(0,3)])
+		set_text(randomTexts[rng.randi_range(0,randomTexts.size() - 1)])
