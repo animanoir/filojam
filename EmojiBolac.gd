@@ -13,3 +13,7 @@ func _ready():
 func _process(delta):
 	SpriteNode.scale.x = sin(xoff)
 	xoff+=0.04
+
+
+func _on_Area2D_body_entered(body):
+	get_tree().change_scene("res://Scenes/Scene3.tscn")

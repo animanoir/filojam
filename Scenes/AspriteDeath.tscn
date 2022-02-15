@@ -1,7 +1,8 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Assets/yo-monstro-sheet-optim.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/AspriteDeath.gd" type="Script" id=2]
+[ext_resource path="res://Assets/SFX/screamer.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -415,6 +416,10 @@ animations = [ {
 position = Vector2( 300, 300 )
 scale = Vector2( 1.04688, 1 )
 frames = SubResource( 81 )
-frame = 4
+frame = 50
 playing = true
 script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true

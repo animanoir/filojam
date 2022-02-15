@@ -421,7 +421,7 @@ font_data = ExtResource( 2 )
 position = Vector2( 300, 300 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 81 )
-frame = 64
+frame = 30
 playing = true
 
 [node name="Text" type="Label" parent="."]

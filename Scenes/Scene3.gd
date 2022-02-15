@@ -17,3 +17,7 @@ func _ready():
 func _process(delta):
 	FondoFractalNode.get_material().set_shader_param("iTime", OS.get_ticks_msec() * 0.001)
 	
+
+
+func _on_eye3_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	FondoFractalNode.get_material().set_shader_param("iTime", OS.get_ticks_msec() * 0.1)

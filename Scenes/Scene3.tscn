@@ -1,10 +1,12 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Scenes/Scene3.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Scene1/texttest.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Ojos/ojo1.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Ojos/ojo3.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Ojos/ojo2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/SFX/2_todas las imágenes que componen la memoria del cuerpo.ogg" type="AudioStream" id=7]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -130,6 +132,57 @@ shader_param/is_card = true
 shader_param/iTime = 0.0
 shader_param/iChannelResolution0 = Vector2( 0, 0 )
 shader_param/N = 3.0
+
+[sub_resource type="CircleShape2D" id=39]
+radius = 30.0035
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 120, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 240, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 360, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 480, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 120, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 120, 120, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 240, 120, 120, 120 )
+
+[sub_resource type="SpriteFrames" id=48]
+animations = [ {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 27.2322
@@ -313,56 +366,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=39]
-radius = 30.0035
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 310, 8 )
 
-[sub_resource type="AtlasTexture" id=40]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 120, 120 )
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 6.5, 305 )
 
-[sub_resource type="AtlasTexture" id=41]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 120, 0, 120, 120 )
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 306.5, 8.5 )
 
-[sub_resource type="AtlasTexture" id=42]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 240, 0, 120, 120 )
-
-[sub_resource type="AtlasTexture" id=43]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 360, 0, 120, 120 )
-
-[sub_resource type="AtlasTexture" id=44]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 480, 0, 120, 120 )
-
-[sub_resource type="AtlasTexture" id=45]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 120, 120, 120 )
-
-[sub_resource type="AtlasTexture" id=46]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 120, 120, 120, 120 )
-
-[sub_resource type="AtlasTexture" id=47]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 240, 120, 120, 120 )
-
-[sub_resource type="SpriteFrames" id=48]
-animations = [ {
-"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 3.875, 300.75 )
 
 [node name="scena_fractal" type="Node2D"]
 script = ExtResource( 1 )
@@ -380,41 +394,117 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="eye1" type="RigidBody2D" parent="FondoFractal"]
-contact_monitor = true
-angular_damp = 6.602
+[node name="eye3" type="RigidBody2D" parent="."]
+position = Vector2( 4.05774, 0.454681 )
+gravity_scale = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FondoFractal/eye1"]
-position = Vector2( 300.63, 351.817 )
-shape = SubResource( 3 )
-
-[node name="eye1_sprite" type="AnimatedSprite" parent="FondoFractal/eye1"]
-position = Vector2( 301.134, 353.351 )
-frames = SubResource( 15 )
-frame = 9
-playing = true
-
-[node name="eye2" type="RigidBody2D" parent="FondoFractal"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FondoFractal/eye2"]
-position = Vector2( 451.9, 102.393 )
-shape = SubResource( 16 )
-
-[node name="eye2_sprite" type="AnimatedSprite" parent="FondoFractal/eye2"]
-position = Vector2( 451.9, 102.393 )
-frames = SubResource( 38 )
-frame = 18
-playing = true
-
-[node name="eye3" type="RigidBody2D" parent="FondoFractal"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FondoFractal/eye3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eye3"]
 position = Vector2( 130.813, 102.272 )
 rotation = 2.87979
 shape = SubResource( 39 )
 
-[node name="eye3_sprite" type="AnimatedSprite" parent="FondoFractal/eye3"]
+[node name="eye3_sprite" type="AnimatedSprite" parent="eye3"]
 position = Vector2( 130.813, 102.272 )
 rotation = 2.87979
 frames = SubResource( 48 )
+frame = 7
 playing = true
+
+[node name="eye4" type="RigidBody2D" parent="."]
+position = Vector2( -43, 338 )
+gravity_scale = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eye4"]
+position = Vector2( 130.813, 102.272 )
+rotation = 2.87979
+shape = SubResource( 39 )
+
+[node name="eye3_sprite" type="AnimatedSprite" parent="eye4"]
+position = Vector2( 130.813, 102.272 )
+rotation = 2.87979
+frames = SubResource( 48 )
+frame = 7
+playing = true
+
+[node name="eye5" type="RigidBody2D" parent="."]
+position = Vector2( 335, 406 )
+gravity_scale = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eye5"]
+position = Vector2( 130.813, 102.272 )
+rotation = 2.87979
+shape = SubResource( 39 )
+
+[node name="eye3_sprite" type="AnimatedSprite" parent="eye5"]
+position = Vector2( 130.813, 102.272 )
+rotation = 2.87979
+frames = SubResource( 48 )
+frame = 6
+playing = true
+
+[node name="eye1" type="RigidBody2D" parent="."]
+position = Vector2( 4.05774, 0.454681 )
+gravity_scale = 0.0
+contact_monitor = true
+angular_damp = 6.602
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eye1"]
+position = Vector2( 300.63, 351.817 )
+shape = SubResource( 3 )
+
+[node name="eye1_sprite" type="AnimatedSprite" parent="eye1"]
+position = Vector2( 301.134, 353.351 )
+frames = SubResource( 15 )
+frame = 4
+playing = true
+
+[node name="eye2" type="RigidBody2D" parent="."]
+position = Vector2( 4.05774, 0.454681 )
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eye2"]
+position = Vector2( 451.9, 102.393 )
+shape = SubResource( 16 )
+
+[node name="eye2_sprite" type="AnimatedSprite" parent="eye2"]
+position = Vector2( 451.9, 102.393 )
+frames = SubResource( 38 )
+frame = 9
+playing = true
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 292, 58 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 302, -9 )
+shape = SubResource( 49 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -3.5, 295 )
+shape = SubResource( 50 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 299.5, 604.5 )
+shape = SubResource( 51 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 612.125, 302.25 )
+shape = SubResource( 52 )
