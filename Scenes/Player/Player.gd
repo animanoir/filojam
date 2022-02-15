@@ -21,8 +21,10 @@ func get_input():
 	elif velocity.x == 0 or velocity.y == 0:
 		$AnimatedSprite.animation = "idle"
 	
+	
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
 	get_input()
+	position.x = wrapf(position.x,0, 600)
 	velocity = move_and_slide(velocity)
