@@ -29,8 +29,17 @@ func _process(delta):
 	else:
 		$NoFocusAnimation.set_visible(false)
 
+
+func get_input():
+	if Input.is_action_pressed("ui_right"):
+		xoff+=0.01
+		print("se puchó")
+		print(get_viewport().size.x)
+		OS.window_position = Vector2(sin(xoff)*get_viewport().size.x,0)
+
 #func get_input():
 #	if Input.is_action_pressed("ui_right"):
 #		xoff+=0.01
 #		print("se puchó")
 #		OS.window_position = Vector2(sin(xoff)*get_viewport().size.x,0)
+
