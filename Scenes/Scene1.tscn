@@ -48,7 +48,7 @@ scale = Vector2( 0.25, 0.25 )
 
 [node name="NoFocusAnimation" parent="." instance=ExtResource( 9 )]
 visible = false
-frame = 39
+frame = 35
 
 [node name="OverlayIn" parent="." instance=ExtResource( 8 )]
 

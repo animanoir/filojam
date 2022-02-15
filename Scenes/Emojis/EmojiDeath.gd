@@ -17,8 +17,7 @@ func _process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	print("Entró al cráneo")
-	OS.alert("Decidí que al tocar este emoji morías.", "El Gran Programador dice:")
+	OS.alert("Existen percepciones, es decir sistemas en los que esas mismas imágenes están relacionadas a una única imagen entre ellas, se escalonan alrededor suyo sobre planos diferentes, y se transfiguran en su conjunto por modificaciones ligeras de esta imagen central", "Randomset")
 	get_tree().change_scene("res://Scenes/AspriteDeath.tscn")
 
 

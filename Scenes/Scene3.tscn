@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Scenes/Scene3.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Scene1/texttest.jpg" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Ojos/ojo2.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/SFX/2_todas las imágenes que componen la memoria del cuerpo.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/eye3_sprite.gd" type="Script" id=8]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -396,7 +397,7 @@ __meta__ = {
 
 [node name="eye3" type="RigidBody2D" parent="."]
 position = Vector2( 4.05774, 0.454681 )
-gravity_scale = 0.0
+applied_force = Vector2( 10, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="eye3"]
 position = Vector2( 130.813, 102.272 )
@@ -407,11 +408,11 @@ shape = SubResource( 39 )
 position = Vector2( 130.813, 102.272 )
 rotation = 2.87979
 frames = SubResource( 48 )
-frame = 7
+frame = 6
 playing = true
 
 [node name="eye4" type="RigidBody2D" parent="."]
-position = Vector2( -43, 338 )
+position = Vector2( -15, 254 )
 gravity_scale = 0.0
 __meta__ = {
 "_edit_group_": true
@@ -426,7 +427,7 @@ shape = SubResource( 39 )
 position = Vector2( 130.813, 102.272 )
 rotation = 2.87979
 frames = SubResource( 48 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="eye5" type="RigidBody2D" parent="."]
@@ -445,7 +446,7 @@ shape = SubResource( 39 )
 position = Vector2( 130.813, 102.272 )
 rotation = 2.87979
 frames = SubResource( 48 )
-frame = 6
+frame = 5
 playing = true
 
 [node name="eye1" type="RigidBody2D" parent="."]
@@ -461,7 +462,7 @@ shape = SubResource( 3 )
 [node name="eye1_sprite" type="AnimatedSprite" parent="eye1"]
 position = Vector2( 301.134, 353.351 )
 frames = SubResource( 15 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="eye2" type="RigidBody2D" parent="."]
@@ -475,11 +476,25 @@ shape = SubResource( 16 )
 [node name="eye2_sprite" type="AnimatedSprite" parent="eye2"]
 position = Vector2( 451.9, 102.393 )
 frames = SubResource( 38 )
-frame = 9
+frame = 20
+playing = true
+
+[node name="eye7" type="RigidBody2D" parent="."]
+position = Vector2( -94, 20 )
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eye7"]
+position = Vector2( 205, 490 )
+shape = SubResource( 16 )
+
+[node name="eye2_sprite" type="AnimatedSprite" parent="eye7"]
+position = Vector2( 205.942, 487.545 )
+frames = SubResource( 38 )
+frame = 19
 playing = true
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 292, 58 )
+position = Vector2( 299, 79 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -508,3 +523,11 @@ shape = SubResource( 51 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2( 612.125, 302.25 )
 shape = SubResource( 52 )
+
+[node name="eye3_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 298, 236 )
+rotation = 2.87979
+frames = SubResource( 48 )
+frame = 2
+playing = true
+script = ExtResource( 8 )
