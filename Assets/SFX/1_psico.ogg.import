@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1_psico.ogg-b87a87246728f9b097c18767857d9206.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/1_psico.ogg"
+dest_files=[ "res://.import/1_psico.ogg-b87a87246728f9b097c18767857d9206.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

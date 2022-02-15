@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/salida-optim.ogg-648e67217f12e5e3e26b0ab0de0ed3e3.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/salida-optim.ogg"
+dest_files=[ "res://.import/salida-optim.ogg-648e67217f12e5e3e26b0ab0de0ed3e3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

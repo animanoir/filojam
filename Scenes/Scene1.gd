@@ -17,7 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_input()
+#	get_input()
 	#xoff += 0.005
 	#OS.window_position = Vector2(sin(xoff)*get_viewport().size.x,0)
 	if Input.is_action_pressed("ui_cancel"):
@@ -29,8 +29,8 @@ func _process(delta):
 	else:
 		$NoFocusAnimation.set_visible(false)
 
-func get_input():
-	if Input.is_action_pressed("ui_right"):
-		xoff+=0.01
-		print("se puchó")
-		OS.window_position = Vector2(sin(xoff)*get_viewport().size.x,0)
+#func get_input():
+#	if Input.is_action_pressed("ui_right"):
+#		xoff+=0.01
+#		print("se puchó")
+#		OS.window_position = Vector2(sin(xoff)*get_viewport().size.x,0)

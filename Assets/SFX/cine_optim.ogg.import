@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cine_optim.ogg-f32f5e47943c182eb8c31e28f39f29ec.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/cine_optim.ogg"
+dest_files=[ "res://.import/cine_optim.ogg-f32f5e47943c182eb8c31e28f39f29ec.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
