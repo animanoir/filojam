@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Textures/Scenary/bgTest.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scenes/OverlayIn.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/NoFocusAnimation.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/SFX/1_psico.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Assets/SFX/audio_alonso.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/SFX/audio_abby.ogg" type="AudioStream" id=12]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -48,10 +50,16 @@ scale = Vector2( 0.25, 0.25 )
 
 [node name="NoFocusAnimation" parent="." instance=ExtResource( 9 )]
 visible = false
-frame = 35
+frame = 55
 
 [node name="OverlayIn" parent="." instance=ExtResource( 8 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="audio_alonso" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+
+[node name="audio_aby" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
