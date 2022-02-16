@@ -11,10 +11,12 @@ var xoff = 0.0
 func _ready():
 	OS.center_window()
 	$audio_alonso.play(0.0)
+	$audio_alonso.set_volume_db(-5.0)
 	$audio_aby.play(0.0)
-	#OS.alert("La realidad no existe", "Wittgenstein dice:")
-	
-	
+	$audio_aby.set_volume_db(-5.0)
+	$audio_oscar.play(0.0)
+	$audio_oscar.set_volume_db(-5.0)
+
 func v_ctrl(obj_dest,player,source_sound):
 	var distance = obj_dest.get_global_transform()[2].distance_to(player.get_global_transform()[2])
 	
@@ -38,6 +40,7 @@ func _process(delta):
 	#volumen = lerp(20,-80,intermedia)
 	v_ctrl($EmojiAlien,$Player,$audio_alonso)
 	v_ctrl($EmojiOjos,$Player,$audio_aby)
+	v_ctrl($EmojiDeath,$Player,$audio_oscar)
 	#print($audio_alonso.set_volume_db(volumen))
 	#xoff += 0.005
 	#OS.window_position = Vector2(sin(xoff)*get_viewport().size.x,0)

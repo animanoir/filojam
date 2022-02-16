@@ -462,7 +462,7 @@ shape = SubResource( 3 )
 [node name="eye1_sprite" type="AnimatedSprite" parent="eye1"]
 position = Vector2( 301.134, 353.351 )
 frames = SubResource( 15 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="eye2" type="RigidBody2D" parent="."]
@@ -476,7 +476,7 @@ shape = SubResource( 16 )
 [node name="eye2_sprite" type="AnimatedSprite" parent="eye2"]
 position = Vector2( 451.9, 102.393 )
 frames = SubResource( 38 )
-frame = 20
+frame = 10
 playing = true
 
 [node name="eye7" type="RigidBody2D" parent="."]
@@ -490,7 +490,7 @@ shape = SubResource( 16 )
 [node name="eye2_sprite" type="AnimatedSprite" parent="eye7"]
 position = Vector2( 205.942, 487.545 )
 frames = SubResource( 38 )
-frame = 19
+frame = 9
 playing = true
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
